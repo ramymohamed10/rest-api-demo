@@ -1,3 +1,15 @@
+# GET root URL
+GET http://localhost:8000/
+Accept: text/plain
+
+###
+
+# GET health check
+GET http://localhost:8000/health
+Accept: application/json
+
+###
+
 # GET all users
 GET http://localhost:8000/users
 Accept: application/json

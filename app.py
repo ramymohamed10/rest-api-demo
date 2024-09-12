@@ -16,6 +16,17 @@ users = [
     {"id": 2, "name": "Bob", "age": 30},
 ]
 
+# Define route to handle requests to the root URL ('/')
+@app.route('/')
+def index():
+    return "Welcome to Flask REST API Demo! Try accessing /users to see all users."
+
+# Health check route (GET)
+# This endpoint returns a 200 OK status and a JSON response to confirm that the service is running.
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"}), 200  # Return HTTP status 200 OK
+
 # Route to retrieve all users (GET request)
 # When the client sends a GET request to /users, this function will return a JSON list of all users.
 # The @ symbol in Python represents a decorator. 
